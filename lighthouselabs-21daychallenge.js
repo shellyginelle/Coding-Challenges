@@ -1,14 +1,14 @@
-//Challenge 1 - function powerOn()
+/* Challenge 1 - function powerOn() */
 function powerOn() {
     ship.powerOn = true;
 }
 
-//Challenge 2 - function countModules()
+/* Challenge 2 - function countModules() */
 function countModules() {
     return availableModules.length;
 }
 
-//Challenge 3 - function countEssential()
+/* Challenge 3 - function countEssential() */
 function countEssential() {
     var countEssential = 0;
     for (let i=0; i<availableModules.length; i++){
@@ -22,27 +22,30 @@ function countEssential() {
     return countEssential;
 }
 
-//Challenge 4 - functions loadModule(index), getToLoadModules()
-//Modularized isLifeSupport() in Challenge 5 to findModuleIndex(name)
+/* Challenge 4 - loadModule(index)
+ * Initially I made functions loadModule(index), getToLoadModules(), isLifeSupport()
+ * Modularized isLifeSupport() in Challenge 5 to findModuleIndex(name)
+ * Modularized loadModule(index) and getToLoadModules() into one function loadModule(index) 
+ * */
 function loadModule(index) {
-    ship.modules.push(availableModules[index]);
-}
-
-function getToLoadModules() {
-    for (let i=0; i<availableModules.length; i++){
-      if (availableModules[i].enabled === false){
-        availableModules[i].enabled = true;
-        loadModule(i);
-      }
-      else {
-        loadModule(i);
-      }
+    if (availableModules[index].essential === true){
+        if (availableModules[index].enabled === false){
+            availableModules[index].enabled = true;
+            ship.modules.push(availableModules[index]);
+        }
+        else {
+            ship.modules.push(availableModules[index]);
+        }
+    }
+    else {
+        //do nothing
     }
 }
 
-getToLoadModules();
+var lifeSupportIndex = findModuleIndex('life-support');
+loadModule(lifeSupportIndex);
 
-//Challenge 4 - function findModuleIndex(name)
+/* Challenge 5 - function findModuleIndex(name) */
 function findModuleIndex(name) {
     var index = 0;
     for (let i=0; i<availableModules.length; i++){
@@ -55,9 +58,6 @@ function findModuleIndex(name) {
     }
     return index;
 }
-
-var lifeSupportIndex = findModuleIndex('life-support');
-loadModule(lifeSupportIndex);
 
 var propulsionIndex = findModuleIndex('propulsion');
 loadModule(propulsionIndex);
