@@ -11,5 +11,5 @@ Welcome to the Lighthouse Labs 21-Day Coding Challenge! Over the next 21 days yo
 Just as you depart the solar system, a gigantic space bug knocks you off course! As the ISS Lighthouse captain, you’ll need to solve daily coding challenges to repair the ship and continue on your mission.
 
 For more information, visit https://coding-challenge.lighthouselabs.ca/
-Code found in lighthouselabs-21daychallenge.js
+<br>Code found in lighthouselabs-21daychallenge.js
 
