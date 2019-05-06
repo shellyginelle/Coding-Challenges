@@ -5,6 +5,9 @@ In effort to keep working on my programming skills, this repository holds my pro
 
 ## Challenge History 
 
+### Challenge 2 - Daily Coding Problem
+For more information, visit https://dailycodingproblem.com/
+
 ### Challenge 1 - Lighthouse Labs 21-Day Coding Challenge
 Welcome to the Lighthouse Labs 21-Day Coding Challenge! Over the next 21 days you’ll be travelling aboard the exploratory vessel ISS Lighthouse, on a mission to explore the galaxy.
 
