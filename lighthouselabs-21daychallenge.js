@@ -45,7 +45,7 @@ function loadModule(index) {
 var lifeSupportIndex = findModuleIndex('life-support');
 loadModule(lifeSupportIndex);
 
-/* Challenge 5 - function findModuleIndex(name) */
+/* Challenge 5 - function findModuleIndex(name) and load propulsion*/
 function findModuleIndex(name) {
     var index = 0;
     for (let i=0; i<availableModules.length; i++){
@@ -62,4 +62,6 @@ function findModuleIndex(name) {
 var propulsionIndex = findModuleIndex('propulsion');
 loadModule(propulsionIndex);
 
-
+/* Challenge 6 - load navigation */
+var navigationIndex = findModuleIndex('navigation');
+loadModule(navigationIndex);
