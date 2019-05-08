@@ -45,7 +45,7 @@ function loadModule(index) {
 var lifeSupportIndex = findModuleIndex('life-support');
 loadModule(lifeSupportIndex);
 
-/* Challenge 5 - function findModuleIndex(name) and load propulsion*/
+/* Challenge 5 - function findModuleIndex(name) */
 function findModuleIndex(name) {
     var index = 0;
     for (let i=0; i<availableModules.length; i++){
@@ -62,6 +62,19 @@ function findModuleIndex(name) {
 var propulsionIndex = findModuleIndex('propulsion');
 loadModule(propulsionIndex);
 
-/* Challenge 6 - load navigation */
+/* Challenge 6 - load navigation module */
 var navigationIndex = findModuleIndex('navigation');
 loadModule(navigationIndex);
+
+/* Challenge 7 - function resetLARRY() and call the function */
+function resetLARRY() {
+  var quackCountdown = 0;
+  
+  do {
+    LARRY.quack();
+    quackCountdown += 1;
+  } while (quackCountdown < 10);
+  
+}
+
+resetLARRY();
