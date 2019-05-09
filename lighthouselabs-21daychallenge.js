@@ -78,3 +78,7 @@ function resetLARRY() {
 }
 
 resetLARRY();
+
+/* Challenge 8 - load communication module */
+var communicationIndex = findModuleIndex('communication');
+loadModule(communicationIndex);
