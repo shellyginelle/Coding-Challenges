@@ -82,3 +82,10 @@ resetLARRY();
 /* Challenge 8 - load communication module */
 var communicationIndex = findModuleIndex('communication');
 loadModule(communicationIndex);
+
+/* Challenge 9 - JSON introduction, function setMessage */
+function setMessage () {
+  radio.message = JSON.stringify(navigation);
+}
+
+setMessage();
