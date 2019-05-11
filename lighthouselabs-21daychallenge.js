@@ -83,9 +83,14 @@ resetLARRY();
 var communicationIndex = findModuleIndex('communication');
 loadModule(communicationIndex);
 
-/* Challenge 9 - JSON introduction, function setMessage */
+/* Challenge 9 - JSON introducation, function setMessage */
 function setMessage () {
   radio.message = JSON.stringify(navigation);
 }
 
 setMessage();
+
+/* Challenge 10 - function activateBeacon() */
+function activateBeacon() {
+  radio.beacon = true;
+}
