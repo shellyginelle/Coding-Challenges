@@ -102,3 +102,10 @@ function setFrequency() {
   
   radio.frequency = newFrequency;
 }
+
+/* Challenge 12 - function initialize() */
+function initialize() {
+  navigation.x = 0;
+  navigation.y = 0;
+  navigation.z = 0;
+}
