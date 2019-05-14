@@ -109,3 +109,17 @@ function initialize() {
   navigation.y = 0;
   navigation.z = 0;
 }
+
+/* Challenge 13 - function calibrateX() */
+function calibrateX() {
+  for (let i=0; i<12; i++){
+    var signal = checkSignal();
+    if (signal === undefined){
+      //do nothing
+    } else {
+      navigation.x = signal;
+    }
+  }
+}
+
+calibrateX();
