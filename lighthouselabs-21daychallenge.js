@@ -1,45 +1,45 @@
 /* Challenge 1 - function powerOn() */
 function powerOn() {
-    ship.powerOn = true;
+  ship.powerOn = true;
 }
 
 /* Challenge 2 - function countModules() */
 function countModules() {
-    return availableModules.length;
+  return availableModules.length;
 }
 
 /* Challenge 3 - function countEssential() */
 function countEssential() {
-    var countEssential = 0;
-    for (let i=0; i<availableModules.length; i++){
-        if (availableModules[i].essential === true){
-            countEssential += 1;
-        }
-        else {
-            //do nothing
-        }
-    }
-    return countEssential;
+  var countEssential = 0;
+  for (let i=0; i<availableModules.length; i++){
+      if (availableModules[i].essential === true){
+          countEssential += 1;
+      }
+      else {
+          //do nothing
+      }
+  }
+  return countEssential;
 }
 
 /* Challenge 4 - loadModule(index)
- * Initially I made functions loadModule(index), getToLoadModules(), isLifeSupport()
- * Modularized isLifeSupport() in Challenge 5 to findModuleIndex(name)
- * Modularized loadModule(index) and getToLoadModules() into one function loadModule(index) 
- * */
+* Initially I made functions loadModule(index), getToLoadModules(), isLifeSupport()
+* Modularized isLifeSupport() in Challenge 5 to findModuleIndex(name)
+* Modularized loadModule(index) and getToLoadModules() into one function loadModule(index) 
+* */
 function loadModule(index) {
-    if (availableModules[index].essential === true){
-        if (availableModules[index].enabled === false){
-            availableModules[index].enabled = true;
-            ship.modules.push(availableModules[index]);
-        }
-        else {
-            ship.modules.push(availableModules[index]);
-        }
-    }
-    else {
-        //do nothing
-    }
+  if (availableModules[index].essential === true){
+      if (availableModules[index].enabled === false){
+          availableModules[index].enabled = true;
+          ship.modules.push(availableModules[index]);
+      }
+      else {
+          ship.modules.push(availableModules[index]);
+      }
+  }
+  else {
+      //do nothing
+  }
 }
 
 var lifeSupportIndex = findModuleIndex('life-support');
@@ -47,16 +47,16 @@ loadModule(lifeSupportIndex);
 
 /* Challenge 5 - function findModuleIndex(name) */
 function findModuleIndex(name) {
-    var index = 0;
-    for (let i=0; i<availableModules.length; i++){
-        if (availableModules[i].name === name){
-            index = i;          
-        }
-        else {
-            //do nothing
-        }
-    }
-    return index;
+  var index = 0;
+  for (let i=0; i<availableModules.length; i++){
+      if (availableModules[i].name === name){
+          index = i;          
+      }
+      else {
+          //do nothing
+      }
+  }
+  return index;
 }
 
 var propulsionIndex = findModuleIndex('propulsion');
@@ -68,13 +68,13 @@ loadModule(navigationIndex);
 
 /* Challenge 7 - function resetLARRY() and call the function */
 function resetLARRY() {
-  var quackCountdown = 0;
-  
-  do {
-    LARRY.quack();
-    quackCountdown += 1;
-  } while (quackCountdown < 10);
-  
+var quackCountdown = 0;
+
+do {
+  LARRY.quack();
+  quackCountdown += 1;
+} while (quackCountdown < 10);
+
 }
 
 resetLARRY();
@@ -85,41 +85,66 @@ loadModule(communicationIndex);
 
 /* Challenge 9 - JSON introducation, function setMessage */
 function setMessage () {
-  radio.message = JSON.stringify(navigation);
+radio.message = JSON.stringify(navigation);
 }
 
 setMessage();
 
 /* Challenge 10 - function activateBeacon() */
 function activateBeacon() {
-  radio.beacon = true;
+radio.beacon = true;
 }
 
 /* Challenge 11 - function setFrequency() */
 function setFrequency() {
-  var lowHigh = radio.range['low'] + radio.range['high'];
-  var newFrequency = lowHigh / 2; 
-  
-  radio.frequency = newFrequency;
+var lowHigh = radio.range['low'] + radio.range['high'];
+var newFrequency = lowHigh / 2; 
+
+radio.frequency = newFrequency;
 }
 
 /* Challenge 12 - function initialize() */
 function initialize() {
-  navigation.x = 0;
-  navigation.y = 0;
-  navigation.z = 0;
+navigation.x = 0;
+navigation.y = 0;
+navigation.z = 0;
 }
 
 /* Challenge 13 - function calibrateX() */
 function calibrateX() {
-  for (let i=0; i<12; i++){
-    var signal = checkSignal();
-    if (signal === undefined){
-      //do nothing
-    } else {
-      navigation.x = signal;
-    }
+for (let i=0; i<12; i++){
+  var signal = checkSignal();
+  if (signal === undefined){
+    //do nothing
+  } else {
+    navigation.x = signal;
   }
+}
+}
+
+/* Challenge 14 - function calibrateY() and calibrateZ()*/
+function calibrateY() {
+for (let i=0; i<60; i++){
+  var signal = checkSignal();
+  if (signal === undefined){
+    //do nothing
+  } else {
+    navigation.y = signal;
+  }
+}
+}
+
+function calibrateZ() {
+for (let i=0; i<60; i++){
+  var signal = checkSignal();
+  if (signal === undefined){
+    //do nothing
+  } else {
+    navigation.z = signal;
+  }
+}
 }
 
 calibrateX();
+calibrateY();
+calibrateZ();
