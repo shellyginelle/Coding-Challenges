@@ -112,25 +112,46 @@ navigation.z = 0;
 
 /* Challenge 15 - function calibrate() that combines Challenges 13 and 14*/
 function calibrate() {
-  var numRunsForX = 12;
-  var numRunsForYandZ = 60;
-  var signal = checkSignal();
-  
-  for (let i=0; i<numRunsForX; i++){
-    if (signal === undefined){
-      //do nothing
-    } else {
-      navigation.x = signal;
-    }
+var numRunsForX = 12;
+var numRunsForY = 60;
+var numRunsForZ = 60;
+var signal = checkSignal();
+
+for (let i=0; i<numRunsForX; i++){
+  if (signal === undefined){
+    //do nothing
+  } else {
+    navigation.x = signal;
   }
-  
-  for (let i=0; i<numRunsForYandZ; i++){
-    if (signal === undefined){
-      //do nothing
-    } else {
-      navigation.y = signal;
-      navigation.z = signal;
-    }
-  }
-  
 }
+
+for (let i=0; i<numRunsForY; i++){
+  if (signal === undefined){
+    //do nothing
+  } else {
+    navigation.y = signal;
+  }
+}
+
+for (let i=0; i<numRunsForZ; i++){
+  if (signal === undefined){
+    //do nothing
+  } else {
+    navigation.z = signal;
+  }
+}
+}
+
+/* Challenge 16 - function setSpeed()*/
+function setSpeed(speed){
+var speedInt = parseInt(speed);
+
+  if (speedInt > 0){
+    navigation.speed = speedInt;
+  } else {
+    //do nothing
+  }
+}
+
+
+
