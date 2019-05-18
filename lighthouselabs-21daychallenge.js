@@ -144,14 +144,18 @@ for (let i=0; i<numRunsForZ; i++){
 
 /* Challenge 16 - function setSpeed()*/
 function setSpeed(speed){
-var speedInt = parseInt(speed);
+var speedInt = parseInt(speed, 10);
 
-  if (speedInt > 0){
-    navigation.speed = speedInt;
-  } else {
-    //do nothing
-  }
+if (speedInt >= 0){
+  navigation.speed = speedInt;
+} else {
+  //do nothing
+}
 }
 
+/* Challenge 17 - function activateAntenna()*/
+function activateAntenna(){
+  ship.antenna.active = true;
+}
 
-
+activateAntenna();
