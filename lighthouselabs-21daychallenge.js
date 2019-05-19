@@ -159,3 +159,16 @@ function activateAntenna(){
 }
 
 activateAntenna();
+
+/* Challenge 18 - function sendBroadcast()*/
+function sendBroadcast(){
+  var broadcastCountdown = 0;
+ 
+  do {
+    broadcast();
+    broadcastCountdown += 1;
+  } while (broadcastCountdown < 100);
+  
+}
+
+sendBroadcast();
