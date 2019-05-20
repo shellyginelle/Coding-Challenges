@@ -172,3 +172,12 @@ function sendBroadcast(){
 }
 
 sendBroadcast();
+
+/* Challenge 19 - function configureBroadcast()*/
+function configureBroadcast(){
+  setFrequency();
+  activateAntenna();
+  sendBroadcast();
+}
+
+configureBroadcast();
