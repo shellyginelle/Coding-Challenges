@@ -181,3 +181,8 @@ function configureBroadcast(){
 }
 
 configureBroadcast();
+
+/* Challenge 20 - function decodeMessage(message)*/
+function decodeMessage(message){
+  
+}
