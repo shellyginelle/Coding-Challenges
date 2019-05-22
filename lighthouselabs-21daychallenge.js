@@ -184,5 +184,35 @@ configureBroadcast();
 
 /* Challenge 20 - function decodeMessage(message)*/
 function decodeMessage(message){
-  
+  var msg = message;
+  msg = msg.split("1").join("i")
+  .split("2").join("u")
+  .split("3").join("e")
+  .split("4").join("a")
+  .split("5").join("y")
+  .split("0").join("o");
+  return msg;
 }
+
+/* Challenge 21 - function returnToEarth()*/
+function returnToEarth(){
+  
+  var broadcastHEXforX = broadcast("x");
+  var broadcastHEXforY = broadcast("y");
+  var broadcastHEXforZ = broadcast("z");
+  
+  var decodedX = decodeMessage(broadcastHEXforX);
+  var decodedY = decodeMessage(broadcastHEXforY);
+  var decodedZ = decodeMessage(broadcastHEXforZ);
+  
+  var intX = parseInt(decodedX, 16);
+  var intY = parseInt(decodedY, 16);
+  var intZ = parseInt(decodedZ, 16);
+  
+  navigation.x = intX;
+  navigation.y = intY;
+  navigation.z = intZ;
+
+}
+
+returnToEarth();
